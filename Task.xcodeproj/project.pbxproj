@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906B949421B9D69D0060BA76 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906B949321B9D69D0060BA76 /* TaskListTableViewController.swift */; };
 		90F03C1B21B85D4E00CC5B6E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F03C1A21B85D4E00CC5B6E /* CoreDataStack.swift */; };
 		90F03C1E21B85EA900CC5B6E /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90F03C1C21B85EA900CC5B6E /* Task.xcdatamodeld */; };
 		90F03C2021B86E7400CC5B6E /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F03C1F21B86E7400CC5B6E /* Task+Convenience.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		906B949321B9D69D0060BA76 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		90F03C1A21B85D4E00CC5B6E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		90F03C1D21B85EA900CC5B6E /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 		90F03C1F21B86E7400CC5B6E /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				90F1BEC721B825D0001963E7 /* TakeListTableViewController.swift */,
+				906B949321B9D69D0060BA76 /* TaskListTableViewController.swift */,
 				90F1BEC921B82B1D001963E7 /* TaskDetailTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -208,6 +211,7 @@
 				90F03C2221B86FC000CC5B6E /* TaskController.swift in Sources */,
 				90F1BEC821B825D0001963E7 /* TakeListTableViewController.swift in Sources */,
 				90F1BEB021B82416001963E7 /* AppDelegate.swift in Sources */,
+				906B949421B9D69D0060BA76 /* TaskListTableViewController.swift in Sources */,
 				90F03C2021B86E7400CC5B6E /* Task+Convenience.swift in Sources */,
 				90F1BECA21B82B1E001963E7 /* TaskDetailTableViewController.swift in Sources */,
 				90F03C2421B88C6800CC5B6E /* DateHelpers.swift in Sources */,

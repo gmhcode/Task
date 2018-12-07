@@ -15,15 +15,39 @@ class TaskController{
     
     static var shared = TaskController()
     
-    var tasks : [Task] = [] {
-        didSet {
-            print(tasks.count, "😈")
-        }
-    }
+//    var tasks : [Task] = [] {
+//        didSet {
+//            print(tasks.count, "😈")
+//        }
+//    }
+    
+    
+    
+    let fetchedResultsController : NSFetchedResultsController <Task> = {
+        
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "isComplete", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "dueDate", ascending: true)]
+        
+        
+        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+    }()
+    
     
     init(){
-        self.tasks = fetchTasks()
+        //        self.tasks = fetchTasks()
+        do{
+         try fetchedResultsController.performFetch()
+        }
+        catch{
+            print("There was an error in \(#function) \(error) : \(error.localizedDescription)")
+        }
+            
+            
     }
+  
     
     var mockTasks: [Task] {
         
@@ -66,7 +90,7 @@ class TaskController{
         
         CoreDataStack.context.delete(task)
         saveToPersistentStore()
-        tasks = self.fetchTasks()
+//        tasks = self.fetchTasks()
     }
     
     
@@ -86,19 +110,19 @@ class TaskController{
     
     
     
-    func fetchTasks() -> [Task]{
-        
-        let request : NSFetchRequest<Task> = Task.fetchRequest()
-        
-        do{
-        return try CoreDataStack.context.fetch(request)
-        }catch{
-            print("There was an error in \(#function) \(error) : \(error.localizedDescription)")
-            return []
-        }
-        
-       
-        //TODO: - Delete this return and un comment ^^
-    }
+//    func fetchTasks() -> [Task]{
+//
+//        let request : NSFetchRequest<Task> = Task.fetchRequest()
+//
+//        do{
+//        return try CoreDataStack.context.fetch(request)
+//        }catch{
+//            print("There was an error in \(#function) \(error) : \(error.localizedDescription)")
+//            return []
+//        }
+//
+//
+//        //TODO: - Delete this return and un comment ^^
+//    }
     
 }
